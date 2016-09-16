@@ -12,7 +12,7 @@ class BanditTest(TestCase):
         output = plugin.invoke(test_dir, set(), set())
 
         self.assertEqual(output, {
-            '/Users/dan/Code/imhotep-bandit/tests/insecure_file.py': {
+            '%s/insecure_file.py' % test_dir: {
                 3: [
                     "\n**B501**: Requests call with verify=False "
                     "disabling SSL certificate checks, security "
