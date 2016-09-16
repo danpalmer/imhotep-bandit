@@ -2,7 +2,7 @@ import sys
 from setuptools import setup, find_packages
 
 setup(
-    name='imhotep-bandit',
+    name='imhotep_bandit',
     version='0.0.2',
     author="Dan Palmer",
     author_email="dan@danpalmer.me",
