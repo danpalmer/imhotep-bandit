@@ -13,7 +13,7 @@ class Bandit(Tool):
 
         cmd = 'bandit -r %s -f json' % dirname
         output = self.executor(cmd)
-        data = json.loads(output)
+        data = json.loads(output.decode('utf8'))
 
         for result in data['results']:
             line = result['line_number']
