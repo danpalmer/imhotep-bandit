@@ -33,5 +33,5 @@ class Bandit(Tool):
             return d
 
         return {
-            k: self.to_dict(v) for k, v in d.iteritems()
+            k: self.to_dict(v) for k, v in d.items()
         }
