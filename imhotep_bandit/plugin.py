@@ -11,7 +11,12 @@ class Bandit(Tool):
     def invoke(self, dirname, filenames, linter_configs):
         retval = defaultdict(lambda: defaultdict(list))
 
-        cmd = 'bandit -r %s -f json' % dirname
+        if filenames:
+            files = ' '.join(filenames)
+        else:
+            files = '-r %s' % dirname
+
+        cmd = 'bandit -f json %s' % files
         output = self.executor(cmd)
         data = json.loads(output.decode('utf8'))
 
