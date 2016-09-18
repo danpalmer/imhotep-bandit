@@ -21,7 +21,7 @@ class Bandit(Tool):
         data = json.loads(output.decode('utf8'))
 
         for result in data['results']:
-            line = result['line_number']
+            line = str(result['line_number'])
             message = self.format_message(result)
             retval[result['filename']][line].append(message)
 
