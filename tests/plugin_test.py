@@ -14,9 +14,9 @@ class BanditTest(TestCase):
         self.assertEqual(output, {
             '%s/insecure_file.py' % test_dir: {
                 '3': [
-                    "\n**B501**: Requests call with verify=False "
+                    "**B501**: Requests call with verify=False "
                     "disabling SSL certificate checks, security "
-                    "issue.\nSeverity: HIGH, Confidence: HIGH\n",
+                    "issue.\nSeverity: HIGH, Confidence: HIGH",
                 ],
             },
         })

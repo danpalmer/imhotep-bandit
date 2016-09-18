@@ -31,7 +31,7 @@ class Bandit(Tool):
         return textwrap.dedent("""
             **{test_id}**: {issue_text}
             Severity: {issue_severity}, Confidence: {issue_confidence}
-        """.format(**report))
+        """.format(**report)).strip()
 
     def to_dict(self, d):
         if not isinstance(d, dict):
