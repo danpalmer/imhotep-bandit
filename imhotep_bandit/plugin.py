@@ -16,7 +16,12 @@ class Bandit(Tool):
         else:
             files = '-r %s' % dirname
 
-        cmd = 'bandit -f json %s' % files
+        if linter_configs:
+            linter_config_option = '--ini %s' % linter_configs.pop()
+        else:
+            linter_config_option = ''
+
+        cmd = 'bandit -f json %s %s' % (files, linter_config_option)
         output = self.executor(cmd)
         data = json.loads(output.decode('utf8'))
 
@@ -40,3 +45,6 @@ class Bandit(Tool):
         return {
             k: self.to_dict(v) for k, v in d.items()
         }
+
+    def get_configs(self):
+        return ['**/.bandit']
