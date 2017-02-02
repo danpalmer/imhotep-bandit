@@ -1,6 +1,4 @@
-import re
 import json
-import os.path
 import textwrap
 from collections import defaultdict
 
@@ -8,8 +6,19 @@ from imhotep.tools import Tool
 
 
 class Bandit(Tool):
+    file_extensions = ['py']
+
     def invoke(self, dirname, filenames, linter_configs):
         retval = defaultdict(lambda: defaultdict(list))
+
+        print(filenames)
+
+        filenames = [
+            x for x in filenames
+            if x.split('.')[-1] in self.file_extensions
+        ]
+
+        print(filenames)
 
         if filenames:
             files = ' '.join(filenames)
