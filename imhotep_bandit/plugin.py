@@ -11,14 +11,10 @@ class Bandit(Tool):
     def invoke(self, dirname, filenames, linter_configs):
         retval = defaultdict(lambda: defaultdict(list))
 
-        print(filenames)
-
         filenames = [
             x for x in filenames
             if x.split('.')[-1] in self.file_extensions
         ]
-
-        print(filenames)
 
         if filenames:
             files = ' '.join(filenames)
