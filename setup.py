@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='imhotep_bandit',
-    version='0.1.0',
+    version='0.1.1',
     author="Dan Palmer",
     author_email="dan@danpalmer.me",
     description="An imhotep plugin for eslint",
