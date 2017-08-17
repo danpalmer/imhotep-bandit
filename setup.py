@@ -5,7 +5,7 @@ setup(
     version='0.1.1',
     author="Dan Palmer",
     author_email="dan@danpalmer.me",
-    description="An imhotep plugin for eslint",
+    description="An imhotep plugin for bandit",
     license='MIT',
     url='https://github.com/danpalmer/imhotep-bandit',
     packages=find_packages(),
